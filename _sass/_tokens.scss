@@ -1,0 +1,57 @@
+@use "sass:color";
+@use "sass:list";
+
+/* ==========================================================================
+   TOKENS
+   Values taken from the homepage's academicpages "default" theme so the
+   shelves look the same after the move. Change freely from here on.
+   ========================================================================== */
+
+$sans-serif   : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$monospace    : Monaco, Consolas, "Lucida Console", monospace;
+
+$type-size-1  : 2.441em;
+$type-size-2  : 1.953em;
+$type-size-3  : 1.563em;
+$type-size-4  : 1.25em;
+$type-size-5  : 1em;
+$type-size-6  : 0.75em;
+$type-size-7  : 0.6875em;
+
+$small        : 600px;
+$medium       : 768px;
+
+$border-radius : 4px;
+$header-height : 70px;
+$content-width : 60rem;
+
+/* breakpoint(max-width $small) -> @media (max-width: 600px) */
+@mixin breakpoint($query) {
+  @media (#{list.nth($query, 1)}: #{list.nth($query, 2)}) { @content; }
+}
+
+:root {
+  --global-base-color          : #2f7f93;
+  --global-bg-color            : #fff;
+  --global-border-color        : #{color.mix(#fff, #7a8288, 90%)};
+  --global-code-background-color : #fafafa;
+  --global-code-text-color     : #{color.mix(#000, #7a8288, 60%)};
+  --global-link-color          : #52adc8;
+  --global-link-color-hover    : #{color.mix(#000, #2f7f93, 25%)};
+  --global-header-link-color   : #{color.mix(#000, #7a8288, 40%)};
+  --global-text-color          : #{color.mix(#000, #7a8288, 40%)};
+  --global-text-color-light    : #{color.mix(#fff, #7a8288, 50%)};
+}
+
+html[data-theme="dark"] {
+  --global-base-color          : #0ea1c5;
+  --global-bg-color            : #474747;
+  --global-border-color        : #{color.mix(#fff, #7a8288, 50%)};
+  --global-code-background-color : #fafafa;
+  --global-code-text-color     : #{color.mix(#000, #7a8288, 60%)};
+  --global-link-color          : #0ea1c5;
+  --global-link-color-hover    : #{color.mix(#000, #0ea1c5, 25%)};
+  --global-header-link-color   : #fff;
+  --global-text-color          : #fff;
+  --global-text-color-light    : #f3f3f3;
+}

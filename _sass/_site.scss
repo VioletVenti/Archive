@@ -1,0 +1,68 @@
+@use "tokens" as *;
+
+/* ==========================================================================
+   SITE CHROME: header, main column, footer
+   ========================================================================== */
+
+.site-header {
+  border-bottom: 1px solid var(--global-border-color);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    max-width: $content-width;
+    min-height: $header-height;
+    margin: 0 auto;
+    padding: 0 1em;
+  }
+
+  &__title {
+    font-size: $type-size-4;
+    font-weight: bold;
+    color: var(--global-header-link-color);
+    text-decoration: none;
+    &:hover { color: var(--global-header-link-color); opacity: 0.75; }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+
+    a {
+      color: var(--global-header-link-color);
+      text-decoration: none;
+      &:hover { opacity: 0.75; }
+    }
+  }
+}
+
+.theme-toggle {
+  padding: 0.25em;
+  font-size: 1em;
+  color: var(--global-header-link-color);
+  background: none;
+  border: 0;
+  cursor: pointer;
+  &:hover { opacity: 0.75; }
+}
+
+.site-main {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 2em 1em 4em;
+}
+
+.site-footer {
+  border-top: 1px solid var(--global-border-color);
+  font-size: $type-size-6;
+  color: var(--global-text-color-light);
+
+  &__inner {
+    max-width: $content-width;
+    margin: 0 auto;
+    padding: 1.5em 1em 2em;
+  }
+}

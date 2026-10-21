@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<article class="page course" itemscope itemtype="http://schema.org/Course">
+  <div class="page__inner-wrap">
+    <nav class="course__crumbs">
+      <a href="{{ site.baseurl }}/#{{ page.shelf }}"><i class="fas fa-arrow-left" aria-hidden="true"></i> {{ site.title }}</a>
+    </nav>
+    {% include course-detail.html course=page body=content %}
+  </div>
+</article>

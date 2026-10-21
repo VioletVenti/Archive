@@ -1,0 +1,48 @@
+title       : "Archive"
+description : "Course notes and materials by Yuqian Han."
+author      : "Yuqian Han"
+lang        : "zh-CN"
+
+url         : https://violetventi.github.io
+# Subpath the site is served under. Change this one line when the site moves
+# behind the reverse proxy (use "" if it ends up at a domain root).
+baseurl     : "/Archive"
+
+# Links in the header
+home_url    : https://violetventi.github.io/
+repository  : "VioletVenti/Archive"
+
+markdown    : kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+collections:
+  courses:
+    output: true
+    permalink: /:path/
+  notes:
+    output: true
+    permalink: /:path/
+
+defaults:
+  - scope: { path: "", type: courses }
+    values: { layout: course }
+  - scope: { path: "", type: notes }
+    values: { layout: note }
+
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - docs
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

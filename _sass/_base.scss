@@ -1,0 +1,121 @@
+@use "tokens" as *;
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 16px;
+  background-color: var(--global-bg-color);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  @include breakpoint(min-width $medium) { font-size: 18px; }
+}
+
+body {
+  margin: 0;
+  color: var(--global-text-color);
+  background-color: var(--global-bg-color);
+  font-family: $sans-serif;
+  line-height: 1.5;
+}
+
+::selection { color: #fff; background: #000; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 2em 0 0.5em;
+  line-height: 1.2;
+  font-weight: bold;
+}
+h1 { margin-top: 0; font-size: $type-size-3; }
+h2 { font-size: $type-size-4; }
+h3 { font-size: $type-size-5; }
+h4, h5, h6 { font-size: $type-size-6; }
+
+p { margin: 0 0 1.3em; }
+small { font-size: $type-size-6; }
+
+a {
+  color: var(--global-link-color);
+  &:hover { color: var(--global-link-color-hover); }
+  &:focus-visible { outline: thin dotted var(--global-text-color); outline-offset: 2px; }
+}
+
+img { max-width: 100%; height: auto; }
+
+code, kbd, samp, pre { font-family: $monospace; }
+code {
+  padding: 0.1em 0.3em;
+  font-size: 0.85em;
+  color: var(--global-code-text-color);
+  background: var(--global-code-background-color);
+  border-radius: $border-radius;
+}
+pre {
+  overflow-x: auto;
+  padding: 1em;
+  font-size: $type-size-6;
+  line-height: 1.6;
+  color: var(--global-code-text-color);
+  background: var(--global-code-background-color);
+  border-radius: $border-radius;
+  code { padding: 0; font-size: inherit; background: none; }
+}
+
+blockquote {
+  margin: 2em 1em 2em 0;
+  padding: 0 1em;
+  font-style: italic;
+  border-left: 0.25em solid var(--global-border-color);
+}
+
+table {
+  width: 100%;
+  margin-bottom: 1em;
+  border-collapse: collapse;
+  font-size: $type-size-6;
+}
+th, td { padding: 0.5em; border-bottom: 1px solid var(--global-border-color); text-align: left; }
+thead th { border-bottom-width: 2px; }
+
+hr { border: 0; border-top: 1px solid var(--global-border-color); margin: 2em 0; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin-bottom: 0.25em;
+  padding: 0.5em 1em;
+  color: #fff !important;
+  font-size: $type-size-6;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--global-base-color);
+  border: 0;
+  border-radius: $border-radius;
+  cursor: pointer;
+  &:hover { background-color: #333; }
+
+  &--inverse {
+    color: var(--global-text-color-light) !important;
+    background-color: var(--global-bg-color);
+    border: 1px solid var(--global-border-color);
+  }
+}
+
+/* Long-form text: course descriptions and notes */
+.page__title { margin-top: 0; line-height: 1; }
+
+.page__content {
+  h2 {
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--global-border-color);
+  }
+  a { text-decoration: underline; }
+  li { margin-bottom: 0.3em; }
+  dt { margin-top: 1em; font-weight: bold; }
+  dd { margin-left: 1em; font-size: $type-size-6; }
+}
