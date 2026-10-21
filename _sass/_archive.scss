@@ -478,6 +478,10 @@ html[data-theme="dark"] {
     right: 0;
     font-size: $type-size-5;
     line-height: 1.5;
+    /* one line, or it spills out of the fixed-height zone onto the books */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: var(--global-text-color);
     opacity: 0;
     clip-path: inset(0 0 100% 0);
@@ -876,7 +880,7 @@ html.course-modal-open.has-scrollbar { scrollbar-gutter: stable; }
   .shelf .shelf__name,
   .shelf.is-open .shelf__name { transform: none; }
   .shelf .shelf__name-en { opacity: 1 !important; }
-  .shelf__preview { margin-top: 0.3em; opacity: 1; clip-path: none; color: var(--global-text-color-light); }
+  .shelf__preview { margin-top: 0.3em; white-space: normal; opacity: 1; clip-path: none; color: var(--global-text-color-light); }
 }
 
 @media (prefers-reduced-motion: reduce) {
