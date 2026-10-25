@@ -30,6 +30,9 @@
   {% elsif c.coding %}
     <span class="btn btn--inverse btn--disabled" aria-disabled="true"><i class="fab fa-github" aria-hidden="true"></i> 仓库即将上线</span>
   {% endif %}
+  {% if c.review_pdf %}
+    <a class="btn" href="{{ site.baseurl }}{{ c.review_pdf }}"><i class="fas fa-file-pdf" aria-hidden="true"></i> 复习笔记 PDF</a>
+  {% endif %}
   {% if notes.size > 0 %}
     <a class="btn" href="#notes-{{ c.slug }}" data-scroll-to="notes-{{ c.slug }}"><i class="fas fa-book-open" aria-hidden="true"></i> 笔记 · {{ notes.size }} 篇</a>
   {% else %}

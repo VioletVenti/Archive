@@ -21,6 +21,7 @@ shelf: math                     # 书架 id，见 _data/shelves.yml
 order: 1                        # 书架内排序，同时是 VOL. 编号
 repo: "https://github.com/..."  # 可选：GitHub 仓库入口
 coding: true                    # 可选：有编程/大作业但还没有 repo 时，显示"仓库即将上线"
+review_pdf: /assets/review/<course>.pdf  # 可选：复习笔记公开版 PDF（由 pku-review publish 写入，结课后才发布）
 ```
 
 ## 笔记 front matter（`_notes/<course>/<NN>-<slug>.md`）
